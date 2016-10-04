@@ -17,11 +17,12 @@ public class PruebaLibroCalificaciones {
 		
 		//pide y recibe el nombre del curso como entrada
 		System.out.println("Escriba el nombre del curso");
-		String nombreDelCurso = entrada.nextLine();//lee una linea de texto
-		
-		
+		//String nombreDelCurso = entrada.nextLine();//lee una linea de texto
+		String elNombre = entrada.nextLine();
+		miLibroCalificaciones.establecerNombreDelCurso(elNombre);
 		//ahora llama al metodo del objeto creado
-		miLibroCalificaciones.mostrarMensaje(nombreDelCurso);
+
+		miLibroCalificaciones.mostrarMensaje();
 		
 	}// fin de la clase main
 
