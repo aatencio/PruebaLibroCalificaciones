@@ -8,6 +8,12 @@ public class LibroCalificaciones
 {
 	private String nombreDelCurso; //nombre del curso para este LibroCalificaciones
 	
+	//Contructor para el objeto LibroCalificaciones
+	public LibroCalificaciones(String nombre)
+	{
+		nombreDelCurso = nombre;
+	}//fin constructor LibroCalificaciones
+	
 	//Metodos para establecer el nombre del curso
 	public void establecerNombreDelCurso(String nombre)
 	{
