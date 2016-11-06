@@ -8,19 +8,12 @@ public class PruebaLibroCalificaciones {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//Crea el objeto Scanner para leer los datos de la ventana de comandos
-		//Scanner entrada = new Scanner(System.in);
+	//crea el objeto LibroCalificaciones
+	//pasa el nombre del curso al constructor
+		LibroCalificaciones miLibroCalificaciones = new LibroCalificaciones("Curso basico de Java");
 		
-		//Crea un objeto libroCalificaciones 
-		//usando el constructor
-		LibroCalificaciones LibroCalificaciones1 = new LibroCalificaciones("C01 Curso basi de Java");
-		
-		LibroCalificaciones LibroCalificaciones2 = new LibroCalificaciones("c02 Curso avanzado de Java");
-		
-				
-		System.out.println(LibroCalificaciones1.obtenerNombreDelCurso());
-		
-		System.out.println(LibroCalificaciones2.obtenerNombreDelCurso());
+		miLibroCalificaciones.obtenerNombreDelCurso();
+		miLibroCalificaciones.determinarPromedioClase();
 		
 	}// fin de la clase main
 
