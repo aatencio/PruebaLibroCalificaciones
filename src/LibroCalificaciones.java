@@ -1,9 +1,10 @@
-import java.util.Scanner;
-
 /*Actividad del libro, ver pagina 73
 Fig. 3.1 */
 //La clase LibroCalificaciones contiene una variable de instancia nombreDelCurso,
 //ahora tiene metodos para obtener y establecer su valor.
+//calcula promedio de la clase usando un ciclo controlado
+import java.util.Scanner;
+
 
 
 public class LibroCalificaciones 
@@ -37,9 +38,10 @@ public class LibroCalificaciones
 							obtenerNombreDelCurso() );
 	}// fin del metodo mostrar mensaje
 	
+	
 	//------------------------------------------------------------------------
-	//Determina el promedio de la clase, con base en las 10 calificaciones
-	//introducidas por el usuario.
+	//Determina el promedio de la clase, con base en un numero arbitrario
+	//de calificaciones introducidas por el usuario.
 	public void determinarPromedioClase()
 	{
 		//crea el objeto Scanner para obtener la entrada 
@@ -49,27 +51,37 @@ public class LibroCalificaciones
 		int total; //suma de las calificaciones ingresadas por usuario
 		int contadorCalificaciones; //numero de la siguiente calificacion
 		int calificacion; //valor de la calificacion de 0 100
-		int promedio; //guarda el promedio
+		double promedio = 0; //guarda el promedio
 		
 		//inicializacion de variables
 		total = 0;
 		contadorCalificaciones = 1;
 		
+		System.out.print("Escriba la calificación ó (-1) para finalizar: "); //indicador
+		calificacion = entrada.nextInt();
+		
 		//repeticion controlada por contador
-		while(contadorCalificaciones <= 10)//itera hasta 10 veces
+		while(calificacion != -1)//itera hasta que se introdusca "-1"
 		{
-			System.out.print("Escriba la calificación: "); //indicador
-			calificacion = entrada.nextInt();
 			total = total + calificacion;
 			contadorCalificaciones = contadorCalificaciones + 1;
+			
+			System.out.print("Escriba la calificación ó (-1) para finalizar: "); //indicador
+			calificacion = entrada.nextInt();
 		}//fin del ciclo while
 		
-		promedio = total / 10; //calculo del promedio
+		if(total == 0)
+		{
+			System.out.print("No se ingresaron calificaciones");
+		}
+		else
+		{
+		promedio = (double) total / contadorCalificaciones; //calculo del promedio
 		
 		//muestra el total y el promedio de las calificaciones
-		System.out.printf("\nEl total de las 10 calificaciones es %d\n", total);
-		System.out.printf("\nEl promedio de las calificaciones es %d\n", promedio);
-		
+		System.out.printf("\nEl total de las calificaciones es: %d\n", total);
+		System.out.printf("\nEl promedio de las calificaciones es: %.2f\n", promedio);
+		}
 		
 	}//fin del metodo determinarPromedioClase
 	
